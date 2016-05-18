@@ -10,11 +10,8 @@ console.log("The sum is: ", sum);
 
 array.splice(2, 0, 6);
 
-for(i in array)
-{
-  console.log(array[i]);
-}
+  console.log(array);
 
-printList(array);
+document.querySelector(".main-content span").innerHTML = "$6500"
 
-$(".main-content").
+// $(".main-content h2 span").text('$6500');
