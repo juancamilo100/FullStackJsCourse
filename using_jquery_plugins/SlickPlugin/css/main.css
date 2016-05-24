@@ -331,6 +331,7 @@ footer {
 
 .is-sticky .header {
   background-color: black;
+  z-index: 1000;
 }
 
 .is-sticky .work {
@@ -338,5 +339,3 @@ footer {
   padding: 12px 0;
   margin: 0;
 }
-
-
