@@ -14,7 +14,6 @@ var createNewTaskElement = function (taskString) {
 
   checkBox.type = "checkbox";
   editInput.type = "text";
-
   editButton.innerText = "Edit";
   editButton.className = "edit";
   deleteButton.innerText = "Delete";
@@ -44,6 +43,7 @@ var addTask = function () {
 var editTask = function () {
   console.log("Edit task...");
 
+
   var listItem = this.parentNode;
 
   var editInput = listItem.querySelector("input[type=text]");
@@ -52,9 +52,11 @@ var editTask = function () {
 
   if(containsClass) {
     label.innerText = editInput.value;
+    this.innerText = "Edit";
   }
   else {
     editInput.value = label.innerText;
+    this.innerText = "Save";
   }
 
   listItem.classList.toggle('editMode');

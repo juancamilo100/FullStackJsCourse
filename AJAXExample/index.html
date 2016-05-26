@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>AJAX with JavaScript</title>
+
+</head>
+
+<body>
+    <div class="grid-container centered">
+        <div class="grid-100">
+            <div class="contained">
+                <div class="grid-100">
+                    <div class="heading">
+                        <h1>Bring on the AJAX</h1>
+                        <button class="button">Show Weather</button>
+                    </div>
+                    <div id="ajax">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            document.getElementById('ajax').innerHTML = xhr.responseText;
+          }
+        };
+
+        var button = document.getElementsByClassName("button")[0];
+        button.onclick = function () {
+          xhr.open('GET', 'http://api.wunderground.com/api/5afb7496f4a7ee7f/conditions/q/38.173618,-85.639465.json');
+
+          xhr.send();
+        }
+    </script>
+</body>
+
+</html>
