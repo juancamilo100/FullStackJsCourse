@@ -25,23 +25,30 @@
             </div>
         </div>
     </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script>
-        var xhr = new XMLHttpRequest();
-
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            document.getElementById('ajax').innerHTML = xhr.responseText;
-          }
-        };
+        // var request = new XMLHttpRequest();
+        //
+        // request.onreadystatechange = function() {
+        //     if (request.readyState === 4) {
+        //         if (request.status === 200) {
+        //             document.getElementById('ajax').innerHTML = request.responseText;
+        //         }
+        //         else {
+        //           alert(request.statusText);
+        //         }
+        //     }
+        // };
+        // $('#ajax').load('http://api.wunderground.com/api/5afb7496f4a7ee7f/conditions/q/38.173618,-85.639465.json');
 
         var button = document.getElementsByClassName("button")[0];
-        button.onclick = function () {
-          xhr.open('GET', 'http://api.wunderground.com/api/5afb7496f4a7ee7f/conditions/q/38.173618,-85.639465.json');
-
-          xhr.send();
+        button.onclick = function() {
+            // request.open('GET', 'http://api.wunderground.com/api/5afb7496f4a7ee7f/conditions/q/38.173618,-85.639465.json');
+            // request.send();
+            $('#ajax').load('http://api.wunderground.com/api/5afb7496f4a7ee7f/conditions/q/38.173618,-85.639465.json');
         }
     </script>
+
 </body>
 
 </html>
